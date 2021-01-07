@@ -28,7 +28,7 @@ function Home(){
     const owe = 200; 
     return(
         <SafeAreaView>
-            <View>
+            <View >
                 <Appbar>
                     <Appbar.Content title={`Balance : $${balanceAmount}`} titleStyle={{marginLeft: -30,marginRight: "auto",fontWeight: "bold"}}/>
                     <Appbar.Action icon="menu" onPress={() => console.log("Go to menu")}/>
