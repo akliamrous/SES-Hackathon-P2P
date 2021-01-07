@@ -22,7 +22,7 @@ const stylesheet = StyleSheet.create(
 function TransactionCard(props){
 
     const today = moment(); 
-    const timeLeft = moment.duration(today.diff(props.dateRecieved))
+    const timeLeft = moment.duration(props.dateDue.diff(today))
     return(
         <Card>
             <Card.Content style={stylesheet.contentStyle}>

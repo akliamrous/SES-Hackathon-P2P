@@ -27,7 +27,7 @@ function Home(){
                     <Appbar.Content title={`Balance : $${balanceAmount}`} titleStyle={{marginLeft: -30,marginRight: "auto",fontWeight: "bold"}}/>
                     <Appbar.Action icon="menu" onPress={() => console.log("Go to menu")}/>
                 </Appbar>
-                <TransactionCard name="John Doe" moneyAmount={3} dateRecieved={moment('2020-01-01')}/>
+                <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
             </View>
         </SafeAreaView>
     )
