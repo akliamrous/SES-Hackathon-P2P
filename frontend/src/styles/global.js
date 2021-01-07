@@ -10,6 +10,10 @@ export const globalStyles = StyleSheet.create({
     inputDescText: {
         fontWeight: "bold",
         fontSize: 22,
-    }
+    },
+    errorMsgText: {
+        fontSize: 12,
+        color: "red"
+    },
 });
 
