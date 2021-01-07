@@ -6,6 +6,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Provider as PaperProvider } from "react-native-paper";
 import Landing from './src/screens/Landing';
 import SignUp from './src/screens/SignUp';
+import Login from './src/screens/Login';
+
 const Stack = createStackNavigator();
 
 //every page we need 
@@ -23,6 +25,11 @@ export default function App() {
             name="SignUp"
             component={SignUp}
             options={{ title: 'Sign Up' }}
+          />  
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ title: 'Login' }}
           />  
           {/* <Stack.Screen
               options={{ title: "" }}

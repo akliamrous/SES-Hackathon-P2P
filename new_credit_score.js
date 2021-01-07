@@ -10,8 +10,8 @@ function calculateNewCreditScore(transaction_result)
     var SR = total_successful_transactions / total_previous_transactions
     var amount_failed = 10
     var amount_succeed = 20
-    var SHR = ((amount_succeed*SR)  -  (amount_failed* FR)) / 10^(Math.log(Math.max(amount_succeed, amount_failed) + 1))
-    var FHR = ((amount_failed* FR)- (amount_succeed*SR)) / 10^(Math.log(Math.max(amount_succeed, amount_failed) + 1))
+    var SHR = ((amount_succeed*SR)  -  (amount_failed* FR)) / 10^(Math.log(Math.max(amount_succeed, amount_failed)) + 1)
+    var FHR = ((amount_failed* FR)- (amount_succeed*SR)) / 10^(Math.log(Math.max(amount_succeed, amount_failed)) + 1)
 
     if(transaction_result == true){
 
