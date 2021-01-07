@@ -5,7 +5,7 @@ import {
   Button,
   Image,
 } from 'react-native';
-// import { globalStyles } from '../styles/global';
+import { globalStyles } from '../styles/global';
 
 class Landing extends React.Component {
 //   state = {
@@ -22,11 +22,11 @@ class Landing extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Image
-            source={require("../assets/logo")}
+      <View style={globalStyles.centeredContainer}>
+        {/* <Image
+            source={require("./src/assets/logo")}
             resizeMode="contain"
-        ></Image>
+        ></Image> */}
         <Button
             title="Sign Up"
             onPress={() => this.signUp()}
@@ -41,11 +41,7 @@ class Landing extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "rgb(240,247,238)",
-    flex: 1,
-    alignItems: "center",
-  },
+  
 });
 
 export default Landing;
