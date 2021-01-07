@@ -4,10 +4,8 @@ import Home from './HomePage/Home';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Provider as PaperProvider } from "react-native-paper";
-
 import Landing from './src/screens/Landing';
 import SignUp from './src/screens/SignUp';
-
 const Stack = createStackNavigator();
 
 //every page we need 
