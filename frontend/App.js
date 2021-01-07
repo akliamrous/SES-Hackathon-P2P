@@ -1,20 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
-
-import Landing from './src/screens/Landing';
-
+import { StyleSheet, Text, View } from 'react-native';
+import Home from './HomePage/Home'; 
 export default function App() {
   return (
-    <PaperProvider>
-      <TopBar />
-        <Landing />
-      <MainScreen />
-    </PaperProvider>
+    <Home/>
   );
 }
 
-const styles = StyleSheet.create({
-
-});
+;
