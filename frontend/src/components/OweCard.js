@@ -1,7 +1,6 @@
 import React from 'react'
 import {StyleSheet} from 'react-native'
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-import { MaterialIcons } from '@expo/vector-icons'; 
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper'; 
 import moment from 'moment'; 
 
 const stylesheet = StyleSheet.create(

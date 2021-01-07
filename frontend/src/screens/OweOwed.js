@@ -1,7 +1,7 @@
 import React from 'react'
-import {View,Text,StyleSheet,SafeAreaView, ScrollView} from 'react-native'
+import {View, StyleSheet, ScrollView} from 'react-native'
 import OweCard from '../components/OweCard.js'
-import { Appbar, Button } from 'react-native-paper'
+import { Appbar} from 'react-native-paper'
 import moment from 'moment'; 
 
 const styles = StyleSheet.create({
