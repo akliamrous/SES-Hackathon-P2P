@@ -17,7 +17,7 @@ class Landing extends React.Component {
   }
 
   signUp() {
-    this.props.navigation.navigate('Sign Up');
+    this.props.navigation.navigate('SignUp');
   }
 
   render() {

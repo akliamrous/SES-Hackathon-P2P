@@ -9,16 +9,28 @@ import SignUp from './src/screens/SignUp';
 const Stack = createStackNavigator();
 
 //every page we need 
-export default function App({navigation}) {
+export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen
-          options={{ title: "" }}
-          name="Home"
-          component={Home}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PaperProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Landing"
+            component={Landing}
+            options={{ title: 'Welcome' }}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUp}
+            options={{ title: 'Sign Up' }}
+          />  
+          {/* <Stack.Screen
+              options={{ title: "" }}
+              name="Home"
+              component={Home}
+          /> */}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 };
