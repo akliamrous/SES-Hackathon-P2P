@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     }
 })
 
-function Home(){
+function Home(props){
     const balanceAmount = 2000; 
     const score = 400; 
     const owed = 300; 
@@ -58,10 +58,10 @@ function Home(){
                 </ScrollView>
             </View>
             <SafeAreaView style={styles.bottom}>
-                <Button icon="cash" mode="contained" onPress={() => console.log('Pressed')}>
+                <Button icon="cash" mode="contained" onPress={() => props.navigation.navigate('Transactions')}>
                     Pay/Request
                 </Button>
-                <Button icon="hand-heart" mode="contained" onPress={() => console.log('Pressed')}>
+                <Button icon="hand-heart" mode="contained" onPress={() => props.navigation.navigate('OweOwed')}>
                     Owe/Owed
                 </Button>
             </SafeAreaView>
