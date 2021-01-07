@@ -6,6 +6,12 @@ import moment from 'moment';
 
 const stylesheet = StyleSheet.create(
     {
+        cardStyle: {
+            width: "95%",
+            marginTop: 10, 
+            borderColor: "black", 
+            borderWidth: 1,
+        }, 
         contentStyle : {
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -24,7 +30,7 @@ function TransactionCard(props){
     const today = moment(); 
     const timeLeft = moment.duration(props.dateDue.diff(today))
     return(
-        <Card>
+        <Card style={stylesheet.cardStyle}>
             <Card.Content style={stylesheet.contentStyle}>
                 <Card.Content style={stylesheet.partStyle}>
                     <Avatar.Image size={50} source={require('./DefaultPic.png')} />
