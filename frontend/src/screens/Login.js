@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { globalStyles } from '../styles/global';
 
-class SignUp extends React.Component {
+class Login extends React.Component {
   state = {
     email: "",
     password: "",
@@ -23,18 +23,10 @@ class SignUp extends React.Component {
     this.setState({password: text})
   }
 
-  handlePasswordConfirmation = (text) => {
-    if (this.state.password != text) {
-      this.setState({errorMsg: "Password fields do not match."})
-    } else {
-      this.setState({errorMsg: ""})
-    }
-  }
-
-  createAccount() {
+  logIn() {
     // Firebase auth
 
-    // Successful sign up
+    // Successful log in
     this.props.navigation.navigate('Homepage');     // Might need to change name later
   }
 
@@ -54,17 +46,10 @@ class SignUp extends React.Component {
                 placeholder="Enter your password..."
                 onChangeText={this.handlePassword}
             />
-            <Text style={globalStyles.inputDescText}>Confirm Password</Text>
-            <TextInput
-                style={styles.textInputField}
-                secureTextEntry={true}
-                placeholder="Enter your password again..."
-                onChangeText={this.handlePasswordConfirmation}
-            />
-            <Text style={globalStyles.errorMsgText}>{this.state.errorMsg}</Text>
+            <Text style={globalStyles.errorMsgText}>{this.state.errorMessage}</Text>
             <Button
-                title="Sign Up"
-                onPress={() => this.createAccount()}
+                title="Login"
+                onPress={() => this.logIn()}
             />
         </View>
     );
@@ -79,4 +64,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default SignUp;
+export default Login;
