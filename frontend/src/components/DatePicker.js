@@ -21,7 +21,6 @@ const DatePicker = () => {
     };
   
     const handleConfirm = (date) => {
-        let monthIndex = date.substring(5,7);
         setDate({
             month: date.getMonth(),
             day: date.getDate(),
