@@ -1,6 +1,6 @@
 import React from 'react'
 import {View,StyleSheet,SafeAreaView, ScrollView} from 'react-native'
-import { Appbar, Button, Text, Modal, Portal, Provider } from 'react-native-paper'
+import { Appbar, Button,Text } from 'react-native-paper'
 import TransactionCard from './TransactionCard'
 import moment from 'moment'; 
 
@@ -18,26 +18,10 @@ const styles = StyleSheet.create({
         left: 30,
         right: 30,
         bottom: 150,
-    },
-    modal: {
-        color: "black"
-    },
-    containerStyle: {
-        backgroundColor: 'white', 
-        padding: 20, 
-        height: 100,
-        width: 200,
-        alignSelf: "center"
     }
 })
 
-function Home(props){
-    const [visible, setVisible] = React.useState(false);
-
-    const showModal = () => setVisible(true);
-    const hideModal = () => setVisible(false);
-    const containerStyle = {backgroundColor: 'white', padding: 20, height: 100};
-
+function Home(){
     const balanceAmount = 2000; 
     const score = 400; 
     const owed = 300; 
@@ -60,6 +44,7 @@ function Home(props){
 
                 <ScrollView style={{marginBottom : 300}}>
                     <View style={{flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',}}>
+                        
                         <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
                         <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
                         <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
@@ -72,24 +57,12 @@ function Home(props){
                         <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
                     </View>
                 </ScrollView>
-
-                <Provider>
-                    <Portal>
-                        <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={styles.containerStyle}>
-                            <Text style={styles.modal}>Example Modal.  Click outside this area to dismiss.</Text>
-                        </Modal>
-                    </Portal>
-                    <Button style={{marginTop: 30}} onPress={showModal}>
-                        Show
-                    </Button>
-                </Provider>
-
             </View>
             <SafeAreaView style={styles.bottom}>
-                <Button icon="cash" mode="contained" onPress={() => props.navigation.navigate('Transactions')}>
+                <Button icon="cash" mode="contained" onPress={() => console.log('Pressed')}>
                     Pay/Request
                 </Button>
-                <Button icon="hand-heart" mode="contained" onPress={() => props.navigation.navigate('OweOwed')}>
+                <Button icon="hand-heart" mode="contained" onPress={() => console.log('Pressed')}>
                     Owe/Owed
                 </Button>
             </SafeAreaView>
