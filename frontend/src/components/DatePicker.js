@@ -4,8 +4,6 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { Button } from 'react-native-paper';
 
 const DatePicker = () => {
-    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
-
     const [selectedDate, setDate] = useState({
         month: "",
         day: "",
@@ -25,9 +23,9 @@ const DatePicker = () => {
     const handleConfirm = (date) => {
         let monthIndex = date.substring(5,7);
         setDate({
-            month: months[monthIndex],
-            day: date.substring(9, 11),
-            year: date.substring(0,4)
+            month: date.getMonth(),
+            day: date.getDate(),
+            year: date.getFullYear()
         })
         console.log(selectedDate);
         hidePicker();
