@@ -27,7 +27,7 @@ class Login extends React.Component {
     // Firebase auth
 
     // Successful log in
-    this.props.navigation.navigate('Homepage');     // Might need to change name later
+    this.props.navigation.navigate('Home');     // Might need to change name later
   }
 
   render() {
