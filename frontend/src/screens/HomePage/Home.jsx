@@ -40,7 +40,7 @@ function Home(props){
         setTimeout(() => {
             setDate(moment('2021-01-07'))
             setScore(100); 
-        },3000)
+        },2000)
     })
     
     return(
@@ -50,16 +50,6 @@ function Home(props){
                     <Appbar.Content title={`Balance : $${balanceAmount}`} titleStyle={{marginLeft: -30,marginRight: "auto",fontWeight: "bold"}}/>
                     <Appbar.Action icon="menu" onPress={() => console.log("Go to menu")}/>
                 </Appbar>
-                <Provider>
-                    <Portal>
-                        <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={styles.containerStyle}>
-                            <Text style={styles.modal}>Example Modal.  Click outside this area to dismiss.</Text>
-                        </Modal>
-                    </Portal>
-                    <Button style={{marginTop: 30}} onPress={showModal}>
-                        Show
-                    </Button>
-                </Provider>
                 <View style={{flexDirection: 'row',justifyContent: 'space-evenly',alignItems: 'center',}}>
                     <Text style={{marginLeft: -15, fontSize: 30, fontWeight: "bold"}}>Score : {`${score}`}</Text>
                     <View style={{flexDirection: 'column',justifyContent: 'space-between',alignItems: 'center',}}>
