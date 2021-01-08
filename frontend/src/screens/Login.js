@@ -7,7 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import { globalStyles } from '../styles/global';
-import * as firebase from "firebase";
+// import * as firebase from "firebase";
 
 class Login extends React.Component {
   state = {
@@ -28,10 +28,10 @@ class Login extends React.Component {
     const { email, password } = this.state 
     
     // Firebase auth
-    firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-        .catch(error => this.setState({ errorMsg: error.message }));
+    //firebase
+    //     .auth()
+    //     .signInWithEmailAndPassword(email, password)
+    //     .catch(error => this.setState({ errorMsg: error.message }));
 
     // Successful log in
     this.props.navigation.navigate('Home');     // Might need to change name later

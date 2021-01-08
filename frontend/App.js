@@ -9,9 +9,9 @@ import Login from './src/screens/Login';
 import OweOwed from './src/screens/OweOwed';
 import Home from './src/screens/HomePage/Home'
 import "react-native-gesture-handler";
-import * as firebase from "firebase";
-import "firebase/auth";
-import "firebase/database";
+// import * as firebase from "firebase";
+// import "firebase/auth";
+// import "firebase/database";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -23,7 +23,7 @@ const firebaseConfig = {
   appId: "1:574249060303:web:c9ca5a4e3e5e9ef2f9f4ba"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
 
 
 const Stack = createStackNavigator();
