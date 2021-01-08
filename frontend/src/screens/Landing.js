@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  StyleSheet,
   View,
   Button,
   Image,
@@ -8,10 +7,6 @@ import {
 import { globalStyles } from '../styles/global';
 
 class Landing extends React.Component {
-//   state = {
-    
-//   };
-
   login() {
     this.props.navigation.navigate('Login');
   }
@@ -39,9 +34,5 @@ class Landing extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  
-});
 
 export default Landing;
