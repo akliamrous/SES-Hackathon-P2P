@@ -68,27 +68,12 @@ function Home(props){
                     </View>
                 </View>
 
-<<<<<<< HEAD
                 <ScrollView style={{marginBottom : 300}}>
                     <View style={{flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',}}>
                     <TransactionCard name="Grant T." moneyAmount={12} dateDue={currentDate}/>
                         <TransactionCard name="Matt C" moneyAmount={32}   dateDue={moment('2021-01-20')}/>
                         <TransactionCard name="Nick D." moneyAmount={10}  dateDue={moment('2021-01-20')}/>
                         <TransactionCard name="Matt C." moneyAmount={22}  dateDue={moment('2021-01-20')}/>
-=======
-                <ScrollView style={{marginBottom : 275}}>
-                    <View style={{flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', backgroundColor: ""}}>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
->>>>>>> 2c98514f3d90bf098fed329b415a863e63b04be9
                     </View>
                 </ScrollView>
             </View>
