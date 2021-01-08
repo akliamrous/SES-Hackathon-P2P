@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,6 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import { globalStyles } from '../styles/global';
+//import auth from '@react-native-firebase/auth';
 
 class SignUp extends React.Component {
   state = {

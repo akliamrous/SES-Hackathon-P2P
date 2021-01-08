@@ -23,11 +23,11 @@ const DatePicker = () => {
     };
   
     const handleConfirm = (date) => {
-        let monthIndex = date.substring(5,7);
+        let monthIndex = date.getMonth();
         setDate({
             month: months[monthIndex],
-            day: date.substring(9, 11),
-            year: date.substring(0,4)
+            day: date.getDate(),
+            year: date.getFullYear()
         })
         console.log(selectedDate);
         hidePicker();
