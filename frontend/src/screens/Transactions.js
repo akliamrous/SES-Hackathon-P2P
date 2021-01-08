@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { Searchbar, TextInput, Button } from 'react-native-paper';
 import DatePicker from "../components/DatePicker";
+import * as firebase from "firebase";
 
 export default function Transactions() {
     const [searchQuery, setSearchQuery] = React.useState('');
@@ -10,8 +11,17 @@ export default function Transactions() {
 
     const onChangeSearch = query => setSearchQuery(query);
 
+    handleMoneySent = () => {
+        firebase
+            .database()
+            .ref('users/' + userId)
+            .set({
+                highscore: score,
+            });
+      };
+
     return (
-        <PaperProvider>
+        <PaperProvider style = {styles.container}>
                 <Searchbar
                     style={styles.searchbar}
                     placeholder="Enter Name"
@@ -33,7 +43,7 @@ export default function Transactions() {
                         style={styles.button}
                         icon="send" 
                         mode="contained" 
-                        onPress={() => console.log('Pressed')}
+                        onPress={() => handleMoneySent()}
                     >
                         Lend
                     </Button>
@@ -53,27 +63,28 @@ export default function Transactions() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F0F7EE',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: "#D7EBCD"
     },
     searchbar: {
         marginTop: 100,
-        marginLeft: 60,
         marginBottom: 20,
-        marginHorizontal: 10,
+        marginHorizontal: 30,
         width: 320
     },
     amount: {
         marginVertical: 20,
         marginRight: 50,
-        width: 100
+        width: 100,
+        color: "#D7EBCD"
     },
     button: {
         marginVertical: 20,
         marginHorizontal: 10,
         display: 'flex',
-        width: 150
+        width: 150,
+        backgroundColor: "#299078"
     },
     inlineView: {
         flexDirection: 'row',

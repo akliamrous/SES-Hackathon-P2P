@@ -17,6 +17,7 @@ import "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyBgbDHG6zCe5eZrj1ZvoAH1Oy_jOvWAvGg",
   authDomain: "ses-hackathon-p2p-3d952.firebaseapp.com",
+  databaseURL: "https://ses-hackathon-p2p-3d952-default-rtdb.firebaseio.com/",
   projectId: "ses-hackathon-p2p-3d952",
   storageBucket: "ses-hackathon-p2p-3d952.appspot.com",
   messagingSenderId: "574249060303",
@@ -66,7 +67,7 @@ export default function App() {
           />
 
           <Stack.Screen
-              options={{ title: "" }}
+              options={{ title: "Pay & Request" }}
               name="Transactions"
               component={Transactions}
           />
