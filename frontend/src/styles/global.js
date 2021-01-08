@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
     centeredContainer: {
-        backgroundColor: "#D7EBCD",
+        backgroundColor: "rgb(240,247,238)",
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
@@ -13,10 +13,7 @@ export const globalStyles = StyleSheet.create({
     },
     errorMsgText: {
         fontSize: 12,
-        color: "red",
-        paddingLeft: 30,
-        paddingRight: 30,
-        textAlign: "center",
+        color: "red"
     },
 });
 

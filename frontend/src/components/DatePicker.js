@@ -39,6 +39,7 @@ const DatePicker = () => {
         <Button
             mode="contained" 
             onPress={showDatePicker}
+            style = {{backgroundColor: "#299078"}}
         >
             Choose Date
         </Button>
