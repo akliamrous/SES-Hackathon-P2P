@@ -1,4 +1,6 @@
 import React from 'react'
+import {useEffect} from 'react'
+import {useState} from 'react'
 import {View,StyleSheet,SafeAreaView, ScrollView} from 'react-native'
 import { Appbar, Button, Text, Modal, Portal, Provider } from 'react-native-paper'
 import TransactionCard from './TransactionCard'
@@ -38,10 +40,19 @@ function Home(props){
     const hideModal = () => setVisible(false);
     const containerStyle = {backgroundColor: 'white', padding: 20, height: 100};
 
-    const balanceAmount = 2000; 
-    const score = 400; 
-    const owed = 300; 
-    const owe = 200; 
+    let balanceAmount = 2000; 
+    const [score, setScore] = React.useState(200);
+    let owed = 300; 
+    let owe = 200; 
+    const [currentDate, setDate] = React.useState(moment('2021-01-09'));
+
+    useEffect(() => {
+        setTimeout(() => {
+            setDate(moment('2021-01-07'))
+            setScore(100); 
+        },3000)
+    })
+    
     return(
         <SafeAreaView>
             <View >
@@ -49,30 +60,6 @@ function Home(props){
                     <Appbar.Content title={`Balance : $${balanceAmount}`} titleStyle={{marginLeft: -30,marginRight: "auto",fontWeight: "bold"}}/>
                     <Appbar.Action icon="menu" onPress={() => console.log("Go to menu")}/>
                 </Appbar>
-
-                <View style={{flexDirection: 'row',justifyContent: 'space-evenly',alignItems: 'center',}}>
-                    <Text style={{fontSize: 40, fontWeight: "bold"}}>Score : {`${score}`}</Text>
-                    <View style={{flexDirection: 'column',justifyContent: 'space-between',alignItems: 'center',}}>
-                        <Text style={{fontSize: 30, fontWeight: "bold"}}>Owed : {`${owed}`}</Text>
-                        <Text style={{fontSize: 30, fontWeight: "bold"}}>Owe : {`${owe}`}</Text>
-                    </View>
-                </View>
-
-                <ScrollView style={{marginBottom : 300}}>
-                    <View style={{flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',}}>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                        <TransactionCard name="John Doe" moneyAmount={3}  dateDue={moment('2021-01-20')}/>
-                    </View>
-                </ScrollView>
-
                 <Provider>
                     <Portal>
                         <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={styles.containerStyle}>
@@ -83,7 +70,22 @@ function Home(props){
                         Show
                     </Button>
                 </Provider>
+                <View style={{flexDirection: 'row',justifyContent: 'space-evenly',alignItems: 'center',}}>
+                    <Text style={{fontSize: 40, fontWeight: "bold"}}>Score : {`${score}`}</Text>
+                    <View style={{flexDirection: 'column',justifyContent: 'space-between',alignItems: 'center',}}>
+                        <Text style={{fontSize: 30, fontWeight: "bold"}}>Owed : {`${owed}`}</Text>
+                        <Text style={{fontSize: 30, fontWeight: "bold"}}>Owe : {`${owe}`}</Text>
+                    </View>
+                </View>
 
+                <ScrollView style={{marginBottom : 300}}>
+                    <View style={{flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',}}>
+                    <TransactionCard name="Grant T." moneyAmount={12} dateDue={currentDate}/>
+                        <TransactionCard name="Matt C" moneyAmount={32}   dateDue={moment('2021-01-20')}/>
+                        <TransactionCard name="Nick D." moneyAmount={10}  dateDue={moment('2021-01-20')}/>
+                        <TransactionCard name="Matt C." moneyAmount={22}  dateDue={moment('2021-01-20')}/>
+                    </View>
+                </ScrollView>
             </View>
             <SafeAreaView style={styles.bottom}>
                 <Button icon="cash" mode="contained" onPress={() => props.navigation.navigate('Transactions')}>
