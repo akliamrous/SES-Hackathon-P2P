@@ -1,4 +1,4 @@
-function calculateNewCreditScore(transaction_result)
+function calculateNewCreditScore(transaction_result, transaction, current_credit, total_prev, total_fail, total_success, amount_f, amount_s)
 {   
     //GET DATA FROM DATABASE
     var transaction = 50.0
