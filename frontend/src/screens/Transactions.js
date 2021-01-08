@@ -3,12 +3,22 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { Searchbar, TextInput, Button } from 'react-native-paper';
 import DatePicker from "../components/DatePicker";
+import * as firebase from "firebase";
 
 export default function Transactions() {
     const [searchQuery, setSearchQuery] = React.useState('');
     const [textAmount, setAmount] = React.useState('');
 
     const onChangeSearch = query => setSearchQuery(query);
+
+    handleMoneySent = () => {
+        firebase
+            .database()
+            .ref('users/' + userId)
+            .set({
+                highscore: score,
+            });
+      };
 
     return (
         <PaperProvider>
@@ -33,7 +43,7 @@ export default function Transactions() {
                         style={styles.button}
                         icon="send" 
                         mode="contained" 
-                        onPress={() => console.log('Pressed')}
+                        onPress={() => handleMoneySent()}
                     >
                         Lend
                     </Button>

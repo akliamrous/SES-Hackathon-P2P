@@ -21,16 +21,17 @@ const styles = StyleSheet.create({
 })
 
 function OweOwed(){
+
     const dummyRowOwe = 
     <View style = {styles.horizontalRow}>
-        <OweCard color = "red" name="John Doe" moneyAmount={Math.random(0,100) * 100}  dateDue={moment('2021-01-20')}/>
-        <OweCard color = "red" name="Suzy Smith" moneyAmount={Math.random(0,100 * 100)}  dateDue={moment('2021-01-20')}/>
+        <OweCard creditScore = {Math.floor(Math.random(0,100) * 100)} color = "red" name="John Doe" moneyAmount={Math.random(0,100) * 100}  dateDue={moment('2021-01-20')}/>
+        <OweCard creditScore = {Math.ceil(Math.random(0,100) * 100)} color = "red" name="Suzy Smith" moneyAmount={Math.random(0,100 * 100)}  dateDue={moment('2021-01-20')}/>
     </View>
 
     const dummyRowOwed = 
     <View style = {styles.horizontalRow}>
-        <OweCard color = "green" name="Homer Simpson" moneyAmount={Math.random(0,100 * 100)}  dateDue={moment('2021-01-20')}/>
-        <OweCard color = "green" name="Peter Griffin" moneyAmount={Math.random(0,100 * 100)}  dateDue={moment('2021-01-20')}/>
+        <OweCard creditScore = {Math.floor(Math.random(0,100) * 100)} color = "green" name="Homer Simpson" moneyAmount={Math.random(0,100 * 100)}  dateDue={moment('2021-01-20')}/>
+        <OweCard creditScore = {Math.ceil(Math.random(0,100) * 100)} color = "green" name="Peter Griffin" moneyAmount={Math.random(0,100 * 100)}  dateDue={moment('2021-01-20')}/>
     </View>
 
     const dummyArrayOwe = []

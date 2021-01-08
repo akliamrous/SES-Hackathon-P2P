@@ -22,6 +22,7 @@ function OweCard(props){
                 <Card.Content style={stylesheet.partStyle}>
                     <Avatar.Image size={50} source={require('../assets/DefaultPic.png')} />
                     <Paragraph>{props.name}</Paragraph>
+                    <Paragraph>{"PLC: " + props.creditScore}</Paragraph>
                     <Title style = {{color: balanceColor}}>{`$${props.moneyAmount.toFixed(2)}`}</Title>
                     <Paragraph>Time Left : {`${timeLeft.days()} days`}</Paragraph>
                 </Card.Content>
