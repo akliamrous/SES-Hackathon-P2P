@@ -5,6 +5,7 @@ import {
   View,
   Button,
   TextInput,
+  TouchableOpacity,
 } from 'react-native';
 import { globalStyles } from '../styles/global';
 import * as firebase from "firebase";
@@ -39,36 +40,60 @@ class Login extends React.Component {
 
   render() {
     return (
-        <View style={globalStyles.centeredContainer}>
+        <View style={globalStyles.inputContainer}>
             <Text style={globalStyles.inputDescText}>Email</Text>
             <TextInput
                 style={styles.textInputField}
-                placeholder="Enter your email..."
+                autoCapitalize="none"
                 onChangeText={this.handleEmail}
             />
             <Text style={globalStyles.inputDescText}>Password</Text>
             <TextInput
                 style={styles.textInputField}
                 secureTextEntry={true}
-                placeholder="Enter your password..."
                 onChangeText={this.handlePassword}
             />
             <Text style={globalStyles.errorMsgText}>{this.state.errorMsg}</Text>
-            <Button
-                title="Login"
+            <View style={styles.centered}>
+              <TouchableOpacity
+                style={styles.bigBtn}
+                color="#299078"
                 onPress={() => this.logIn()}
-            />
+              >
+                <Text style={styles.btnText}>Login</Text>
+              </TouchableOpacity>
+            </View>
         </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    textInputField: {
-        fontSize: 18,
-        padding: 15,
-        marginBottom: 15,
-    }
+  textInputField: {
+    marginBottom: 30,
+    borderBottomColor: "#48B77D",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    height: 50,
+    fontSize: 18,
+  },
+  centered: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  bigBtn: {
+    width: 200,
+    margin: 8,
+  },
+  btnText: {
+    color: "white",
+    padding: 20,
+    textAlign: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
+    fontSize: 20,
+    backgroundColor: "#299078",
+    margin: 20,
+  }
 });
 
 export default Login;
