@@ -7,13 +7,18 @@ import {
   TextInput,
 } from 'react-native';
 import { globalStyles } from '../styles/global';
-//import auth from '@react-native-firebase/auth';
+import * as firebase from "firebase";
 
 class SignUp extends React.Component {
   state = {
+    name: "",
     email: "",
     password: "",
     errorMsg: "",
+  }
+
+  handleName = (text) => {
+    this.setState({name: text})
   }
 
   handleEmail = (text) => {
@@ -34,14 +39,24 @@ class SignUp extends React.Component {
 
   createAccount() {
     // Firebase auth
-
-    // Successful sign up
-    this.props.navigation.navigate('Homepage');     // Might need to change name later
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(userCredentials => {
+        this.props.navigation.navigate('Home');
+      })
+      .catch(error => this.setState({ errorMsg: error.message }))
   }
 
   render() {
     return (
         <View style={globalStyles.centeredContainer}>
+            <Text style={globalStyles.inputDescText}>Name</Text>
+            <TextInput
+                style={styles.textInputField}
+                placeholder="Enter your name..."
+                onChangeText={this.handleName}
+            />
             <Text style={globalStyles.inputDescText}>Email</Text>
             <TextInput
                 style={styles.textInputField}

@@ -13,7 +13,10 @@ export const globalStyles = StyleSheet.create({
     },
     errorMsgText: {
         fontSize: 12,
-        color: "red"
+        color: "red",
+        paddingLeft: 30,
+        paddingRight: 30,
+        textAlign: "center",
     },
 });
 

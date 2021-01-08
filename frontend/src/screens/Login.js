@@ -7,7 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import { globalStyles } from '../styles/global';
-// import * as firebase from "firebase";
+import * as firebase from "firebase";
 
 class Login extends React.Component {
   state = {
@@ -28,13 +28,13 @@ class Login extends React.Component {
     const { email, password } = this.state 
     
     // Firebase auth
-    //firebase
-    //     .auth()
-    //     .signInWithEmailAndPassword(email, password)
-    //     .catch(error => this.setState({ errorMsg: error.message }));
-
-    // Successful log in
-    this.props.navigation.navigate('Home');     // Might need to change name later
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(userCredentials => {
+        this.props.navigation.navigate('Home');
+      })
+      .catch(error => this.setState({ errorMsg: error.message }));
   }
 
   render() {
@@ -53,7 +53,7 @@ class Login extends React.Component {
                 placeholder="Enter your password..."
                 onChangeText={this.handlePassword}
             />
-            <Text style={globalStyles.errorMsgText}>{this.state.errorMessage}</Text>
+            <Text style={globalStyles.errorMsgText}>{this.state.errorMsg}</Text>
             <Button
                 title="Login"
                 onPress={() => this.logIn()}
